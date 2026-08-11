@@ -30,18 +30,32 @@ Conteúdos organizados por semestre, refletindo a progressão acadêmica:
 /Bacharelado - Ciência da Computação IMPACTA/
 │
 ├── 1 Semestre/
+│   └── Linguagem de Programação
 ├── 2 Semestre/
+│   ├── Matemática para Computação
+│   └── Técnicas de Programação
 ├── 3 Semestre/
+│   ├── Algoritmos e Estrutura de Dados
+│   └── Análise e Projeto de Algoritmos
 ├── 4 Semestre/
-│ └── Linguagem Orientada a Objeto/
-└── 5 Semestre/
+│   └── Linguagem Orientada a Objeto
+├── 5 Semestre/
+│   ├── Análise Exploratória de Dados
+│   ├── Inteligência Computacional
+│   ├── Paradigmas da Computação
+│   └── Teoria dos Grafos
+└── 6 Semestre/
+    ├── Compiladores
+    └── Computação Gráfica e RA RV
 ```
 
 Inclui:
-- Algoritmos e lógica de programação  
-- Programação orientada a objetos  
-- Estruturas fundamentais da computação  
-- Exercícios, anotações e experimentos  
+
+- **1º-2º semestre:** lógica de programação, matemática para computação e técnicas de programação em Python (estruturas de dados sequenciais, conjuntos, dicionários, recursividade e memoização, tratamento de exceções, TDD, análise de eficiência de algoritmos, algoritmos de ordenação — bubble, selection, insertion, heap, merge, quick sort — e busca — linear, binária, quickselect)
+- **3º semestre:** algoritmos e estruturas de dados em Java (com apoio de bibliografia de referência) e análise e projeto de algoritmos
+- **4º semestre:** programação orientada a objetos em Java (classes, objetos, exercícios práticos)
+- **5º semestre:** análise exploratória de dados (datasets Iris e Penguins, boxplots), inteligência computacional (projeto final), paradigmas da computação (paradigma imperativo em C e paradigma funcional em Elixir) e teoria dos grafos (algoritmos de Edmonds-Karp e Floyd-Warshall)
+- **6º semestre:** compiladores e computação gráfica / realidade aumentada e virtual
 
 ---
 
@@ -56,12 +70,20 @@ Coleção de exercícios resolvidos da plataforma Beecrowd, com foco em:
 
 Exemplos:
 
-area-do-círculo.py  
-numero_secreto.py  
-media.py  
-while.py  
-string_01.py  
+area-do-círculo.py
+numero_secreto.py
+media.py
+while.py
+string_01.py
 
+---
+
+### CC50 (Harvard CS50)
+
+Exercícios e fundamentos da linguagem C desenvolvidos a partir do curso CS50, reforçando:
+
+- Sintaxe e estrutura básica de programas em C
+- Fundamentos de programação de baixo nível
 
 ---
 
@@ -74,14 +96,18 @@ Materiais do curso técnico, com foco em desenvolvimento web e fundamentos de TI
 ├── Gestão e conteúdo Web
 ├── Interfaces Web
 ├── Projetos com DreamWeaver
-├── Projeto Criptomoeda
-└── Projeto Prático
+├── Projeto Menu
+├── Projeto Cripto
+├── ProjetoPrático
+└── site ti é aqui
 ```
 
 Inclui:
-- HTML, CSS e fundamentos de front-end  
-- Estruturação de projetos web  
-- Conceitos iniciais de sistemas  
+
+- Programação e algoritmos em C (calculadoras, tabuada, IMC)
+- HTML, CSS e fundamentos de front-end
+- Estruturação de projetos web (portfólio de estilos artísticos, site institucional, projetos com Adobe DreamWeaver)
+- Conceitos iniciais de sistemas e gestão de conteúdo web
 
 ---
 
@@ -90,17 +116,16 @@ Inclui:
 Conteúdos complementares voltados para mercado e prática:
 
 #### ETL / Data
-- Conceitos de Extração, Transformação e Carga de dados  
-- Organização de scripts e experimentos  
 
-#### Java Programmer (IMPACTA)
-- Fundamentos da linguagem Java  
-- Estruturas de controle  
-- Introdução à orientação a objetos  
+- Pipeline completo de Extração, Transformação e Carga de dados em Python (pandas, SQLite, Excel/HTML)
+- Notebooks organizados por etapa: `1. Extract`, `2. Transform`, `3. Load` e `4. Projeto de Análise de Dados`
+- Material de apoio com exercícios adicionais de extração, transformação e carregamento
 
-#### CC50 / Linguagem C
-- Base de programação em baixo nível  
-- Estrutura de memória e lógica computacional  
+#### Java Programmer (IMPACTA - My Way)
+
+- Fundamentos da linguagem Java
+- Tipos de dados, valores literais e variáveis
+- Introdução à orientação a objetos
 
 ---
 
@@ -108,18 +133,19 @@ Conteúdos complementares voltados para mercado e prática:
 
 Projetos iniciais de front-end, incluindo:
 
-- Estruturação de páginas  
-- Estilização com CSS  
-- Projeto de portfólio  
+- Estruturação de páginas
+- Estilização com CSS
+- Projeto de portfólio pessoal
+- Site institucional simples (Fundação Bradesco)
 
 ---
 
 ## Tecnologias e Ferramentas
 
-- **Linguagens:** Python, Java, C, HTML, CSS  
-- **Conceitos:** Algoritmos, Estruturas de Dados, OOP  
-- **Data:** ETL, análise exploratória, organização de dados  
-- **Ferramentas:** Git, Jupyter Notebook, ambientes acadêmicos  
+- **Linguagens:** Python, Java, C, Elixir, HTML, CSS
+- **Conceitos:** Algoritmos, Estruturas de Dados, OOP, Paradigmas de Programação, Teoria dos Grafos, Compiladores
+- **Data:** ETL, análise exploratória de dados, SQLite, pandas, organização e persistência de dados
+- **Ferramentas:** Git, Jupyter Notebook, ambientes acadêmicos
 
 ---
 
@@ -127,18 +153,18 @@ Projetos iniciais de front-end, incluindo:
 
 Este repositório não é apenas um conjunto de códigos, mas sim um reflexo de:
 
-- Aprendizado contínuo  
-- Iteração e melhoria constante  
-- Reforço de fundamentos  
-- Construção de base sólida para atuação em tecnologia e dados  
+- Aprendizado contínuo
+- Iteração e melhoria constante
+- Reforço de fundamentos
+- Construção de base sólida para atuação em tecnologia e dados
 
 ---
 
 ## Autor
 
-Gabriel Muchon Pavanelli    
-Estudante de Ciência da Computação    
-Interesses em **Tecnologia, Data Analytics e Advisory Consulting**  
+Gabriel Muchon Pavanelli
+Estudante de Ciência da Computação
+Interesses em **Tecnologia, Data Analytics e Advisory Consulting**
 
 ---
 
