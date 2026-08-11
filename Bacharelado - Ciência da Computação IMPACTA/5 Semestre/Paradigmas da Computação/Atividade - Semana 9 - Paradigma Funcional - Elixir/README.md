@@ -1,167 +1,122 @@
 # Atividade - Semana 9 - Paradigma Funcional - Elixir
 
-Este diretório contém a atividade desenvolvida na disciplina de **Paradigmas da Computação**, com foco na aplicação de conceitos do **Paradigma Funcional** utilizando a linguagem **Elixir**.
+Atividade da disciplina **Paradigmas da Computação**, com foco na aplicação de conceitos do **paradigma funcional** usando **Elixir**.
 
-O trabalho consistiu na evolução de um sistema simples de chat, partindo de uma versão inicial para uma versão refatorada, aplicando princípios fundamentais da programação funcional.
+O trabalho consiste na evolução de um sistema simples de chat em modo texto: uma primeira versão ingênua, e uma segunda versão refatorada aplicando princípios de programação funcional (funções puras, imutabilidade, recursão e separação de responsabilidades).
 
----
+## Estrutura do diretório
 
-## Estrutura do Diretório
-
-```bash
+```text
 Atividade - Semana 9 - Paradigma Funcional - Elixir/
-├── chat.exs
-└── chat v2.exs
+├── chat.exs        # versão inicial
+└── chat v2.exs      # versão refatorada
 ```
-## Objetivo da Atividade
 
-Evoluir um sistema funcional aplicando os seguintes conceitos:
+## Objetivo
+
+Evoluir um pequeno sistema funcional aplicando:
 
 - Funções puras
 - Imutabilidade
 - Recursão
 - Separação de responsabilidades
 
----
+### Restrições da atividade
 
-## Arquivos
+| Não pode usar | Deve usar |
+| --- | --- |
+| `IO.gets` | listas de entradas |
+| variáveis globais | recursão |
+| laços imperativos (`for`, `while`) | funções puras |
 
-### `chat.exs`
+Como Elixir não tem `for`/`while` nem variáveis mutáveis, as entradas do chat são simuladas como uma lista fixa processada recursivamente — cada mensagem "digitada" é apenas o próximo elemento da lista.
 
-Versão inicial do sistema de chat.
+## `chat.exs` — versão inicial
 
-#### Características
+Versão ingênua, tudo resolvido dentro de uma única função `loop/2`:
 
-- Processamento sequencial de mensagens
-- Armazenamento de mensagens em lista
-- Exibição no terminal
-- Encerramento ao receber `"sair"`
+- processamento sequencial das entradas (lista fixa, sem `IO.gets`)
+- mensagens acumuladas numa lista (`mensagens ++ [entrada]`)
+- toda a lista é reimpressa a cada mensagem nova (`Enum.each`)
+- encerra ao encontrar `"sair"`
 
-#### Limitação identificada
+**Limitação:** a função `loop/2` mistura leitura, validação, acúmulo, exibição e encerramento — difícil de estender ou testar isoladamente.
 
-A função principal concentra múltiplas responsabilidades, como:
+## `chat v2.exs` — versão refatorada
 
-- leitura de entradas
-- validação
-- adição de mensagens
-- exibição
-- encerramento do sistema
+Mesma ideia, com responsabilidades separadas em funções pequenas e uso de *pattern matching* no lugar de `if/else` aninhado.
 
-Essa abordagem reduz a legibilidade e dificulta futuras manutenções.
+### Comandos disponíveis
 
----
+| Comando | Efeito |
+| --- | --- |
+| `/count` | exibe a quantidade de mensagens armazenadas |
+| `/clear` | limpa o histórico de mensagens |
+| `sair` | encerra o programa |
 
-### `chat v2.exs`
+### Regras de validação
 
-Versão refatorada com aplicação dos princípios do paradigma funcional.
+- a mensagem não pode ser vazia
+- no máximo 10 caracteres
 
-#### Melhorias implementadas
+### Funções
 
-- Separação de responsabilidades
-- Modularização do código
-- Uso estruturado de recursão
-- Validação de mensagens
-- Inclusão de comandos adicionais
-
-#### Comandos disponíveis
-
-| Comando  | Função                          |
-| -------- | ------------------------------- |
-| `/count` | Exibe a quantidade de mensagens |
-| `/clear` | Limpa o histórico               |
-| `sair`   | Encerra o programa              |
-
-#### Regras de validação
-
-- A mensagem não pode ser vazia
-- Máximo de 10 caracteres
-
----
-
-## Etapas Desenvolvidas
-
-### Parte 1 — Separação de responsabilidades
-
-Criação de funções específicas para:
-
-- validar mensagem
-- adicionar mensagem
-- processar entrada
-
-Exemplo:
-
-```elixir
-def adicionar(mensagens, msg), do: mensagens ++ [msg]
-```
-
-### Parte 2 — Validação funcional
-
-Implementação das regras de negócio em função isolada.
+| Função | Responsabilidade |
+| --- | --- |
+| `loop/2` | laço principal recursivo — só decide "acabou ou continua" |
+| `processar/3` | decide o que fazer com a entrada (comando, mensagem válida ou inválida) via *pattern matching* |
+| `valida?/1` | função pura que valida uma mensagem |
+| `adicionar/2` | função pura que retorna a lista de mensagens com o novo item |
+| `mostrar/1` | exibe a lista de mensagens de forma recursiva, sem `Enum.each` |
 
 ```elixir
 def valida?(msg) do
   msg != "" and String.length(msg) <= 10
 end
-```
 
-### Parte 3 — Redução de lógica duplicada
+def adicionar(mensagens, msg), do: mensagens ++ [msg]
 
-Criação da função:    
-processar(entrada, mensagens, resto)    
-
-Com isso, a função principal passou a delegar responsabilidades.
-
-### Parte 4 — Uso de recursão no lugar de Enum.each
-
-Substituição de estruturas iterativas por recursão.
-```elixir
 def mostrar([]), do: :ok
-
 def mostrar([h | t]) do
   IO.puts(h)
   mostrar(t)
 end
 ```
 
-### Parte 5 — Comandos adicionais
+### `chat.exs` vs `chat v2.exs`
 
-Implementação de funcionalidades extras:
+| Aspecto | `chat.exs` | `chat v2.exs` |
+| --- | --- | --- |
+| Responsabilidades | tudo em `loop/2` | separadas por função (`processar`, `valida?`, `adicionar`, `mostrar`) |
+| Decisão de fluxo | `if/else` | *pattern matching* em `processar/3` |
+| Exibição | `Enum.each` | recursão manual (`mostrar/1`) |
+| Validação de mensagem | nenhuma | tamanho máximo e não-vazia |
+| Comandos | só `sair` | `sair`, `/count`, `/clear` |
 
-- clear
-- count
+## Execução
 
-### Restrições da Atividade
-#### Não utilizar:
-- IO.gets
-- variáveis globais
-- laços imperativos
-#### Utilizar obrigatoriamente:
-- listas de entradas
-- recursão
-- funções puras
-- Execução
+Pré-requisito: [Elixir](https://elixir-lang.org/install.html) instalado (`elixir --version`).
 
-### Versão inicial
-```elixir
+```bash
+# versão inicial
 elixir chat.exs
-```
-### Versão refatorada
-```elixir
 
+# versão refatorada (nome de arquivo com espaço precisa de aspas)
 elixir "chat v2.exs"
 ```
 
-## Conceitos Aplicados
+## Conceitos aplicados
+
 - Programação funcional
 - Imutabilidade
 - Recursão
-- Pattern Matching
-- Modularização
-- Separação de responsabilidades
+- Pattern matching
+- Modularização e separação de responsabilidades
 - Funções puras
 
 ---
+
 ### Autor
 
-Gabriel Muchon Pavanelli   
-Ciência da Computação - Faculdade Impacta
+Gabriel Muchon Pavanelli
+Ciência da Computação — Faculdade Impacta
