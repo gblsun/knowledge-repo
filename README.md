@@ -21,11 +21,11 @@ O objetivo principal é servir como uma **base de conhecimento estruturada**, co
 
 ## Estrutura do Repositório
 
-O repositório está organizado em múltiplas pastas, cada uma representando diferentes contextos de aprendizado:
+O repositório está organizado em múltiplas pastas, cada uma representando diferentes contextos de aprendizado. Cada semestre e cada disciplina/curso possui um `README.md` próprio com um resumo do conteúdo abordado, e um `.gitignore` na raiz mantém o repositório livre de artefatos de build, cache e arquivos de IDE.
 
 ### Bacharelado - Ciência da Computação (IMPACTA)
 
-Conteúdos organizados por semestre, refletindo a progressão acadêmica:
+Conteúdos organizados por semestre, refletindo a progressão acadêmica. Cada semestre e cada disciplina possui seu próprio `README.md` com um resumo do conteúdo abordado:
 ```
 /Bacharelado - Ciência da Computação IMPACTA/
 │
@@ -89,7 +89,7 @@ Exercícios e fundamentos da linguagem C desenvolvidos a partir do curso CS50, r
 
 ### ETEC — Informática para Internet
 
-Materiais do curso técnico, com foco em desenvolvimento web e fundamentos de TI:
+Materiais do curso técnico, com foco em desenvolvimento web e fundamentos de TI. Cada disciplina/projeto possui seu próprio `README.md`:
 ```
 /ETEC Informática para Internet ABH/
 ├── Programação e algoritmos
@@ -98,7 +98,7 @@ Materiais do curso técnico, com foco em desenvolvimento web e fundamentos de TI
 ├── Projetos com DreamWeaver
 ├── Projeto Menu
 ├── Projeto Cripto
-├── ProjetoPrático
+├── Projeto Prático
 └── site ti é aqui
 ```
 
@@ -129,7 +129,7 @@ Conteúdos complementares voltados para mercado e prática:
 
 ---
 
-### HTML & CSS
+### Projetos HTML e CSS
 
 Projetos iniciais de front-end, incluindo:
 

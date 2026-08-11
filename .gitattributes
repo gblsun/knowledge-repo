@@ -1,0 +1,26 @@
+# Normalize text files to LF in the repository; Git converts to the
+# platform's native line ending on checkout.
+* text=auto eol=lf
+
+# Explicit binary types (avoid line-ending conversion / diffing)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.jfif binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.doc binary
+*.docx binary
+*.xls binary
+*.xlsx binary
+*.ppt binary
+*.pptx binary
+*.db binary
+*.exe binary
+*.mp4 binary
+*.rar binary
+*.zip binary
+
+# Notebook diffs are noisy; treat as binary for diff purposes
+*.ipynb -diff
