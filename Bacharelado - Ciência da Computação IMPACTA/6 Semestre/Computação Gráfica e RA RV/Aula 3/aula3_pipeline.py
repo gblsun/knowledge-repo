@@ -8,6 +8,7 @@
 ║  github: gblsunn                                              ║
 ╚═══════════════════════════════════════════════════════════════╝
 """
+
 import math
 import pygame
 
@@ -21,17 +22,30 @@ TEXT_COLOR = (235, 240, 248)
 
 # Vertices do cubo no espaco 3D
 VERTICES = [
-    (-1, -1, -1), ( 1, -1, -1),
-    ( 1,  1, -1), (-1,  1, -1),
-    (-1, -1,  1), ( 1, -1,  1),
-    ( 1,  1,  1), (-1,  1,  1),
+    (-1, -1, -1),
+    (1, -1, -1),
+    (1, 1, -1),
+    (-1, 1, -1),
+    (-1, -1, 1),
+    (1, -1, 1),
+    (1, 1, 1),
+    (-1, 1, 1),
 ]
 
 # Cada tupla conecta dois vertices e forma uma aresta
 EDGES = [
-    (0, 1), (1, 2), (2, 3), (3, 0),
-    (4, 5), (5, 6), (6, 7), (7, 4),
-    (0, 4), (1, 5), (2, 6), (3, 7),
+    (0, 1),
+    (1, 2),
+    (2, 3),
+    (3, 0),
+    (4, 5),
+    (5, 6),
+    (6, 7),
+    (7, 4),
+    (0, 4),
+    (1, 5),
+    (2, 6),
+    (3, 7),
 ]
 
 
@@ -91,13 +105,13 @@ def draw_cube(surface, projected, color):
 def main():
     pygame.init()
     screen = pygame.display.set_mode((WIDTH, HEIGHT))
-    pygame.display.set_caption('Pipeline grafico 3D - Aula 3')
+    pygame.display.set_caption("Pipeline grafico 3D - Aula 3")
     clock = pygame.time.Clock()
-    font = pygame.font.SysFont('Arial', 20)
+    font = pygame.font.SysFont("Arial", 20)
 
     angles = [0.0, 0.0, 0.0]
     camera_z = 6.0
-    projection = 'perspectiva'
+    projection = "perspectiva"
 
     running = True
     while running:
@@ -110,41 +124,53 @@ def main():
                 if event.key == pygame.K_ESCAPE:
                     running = False
                 elif event.key == pygame.K_p:
-                    projection = ('ortografica' if projection == 'perspectiva'
-                                  else 'perspectiva')
+                    projection = (
+                        "ortografica" if projection == "perspectiva" else "perspectiva"
+                    )
 
         keys = pygame.key.get_pressed()
         speed = 2.0 * dt
-        if keys[pygame.K_a]: angles[1] -= speed
-        if keys[pygame.K_d]: angles[1] += speed
-        if keys[pygame.K_w]: angles[0] -= speed
-        if keys[pygame.K_s]: angles[0] += speed
-        if keys[pygame.K_q]: angles[2] -= speed
-        if keys[pygame.K_e]: angles[2] += speed
+        if keys[pygame.K_a]:
+            angles[1] -= speed
+        if keys[pygame.K_d]:
+            angles[1] += speed
+        if keys[pygame.K_w]:
+            angles[0] -= speed
+        if keys[pygame.K_s]:
+            angles[0] += speed
+        if keys[pygame.K_q]:
+            angles[2] -= speed
+        if keys[pygame.K_e]:
+            angles[2] += speed
         if keys[pygame.K_EQUALS] or keys[pygame.K_KP_PLUS]:
             camera_z = max(2.0, camera_z - 3.0 * dt)
         if keys[pygame.K_MINUS] or keys[pygame.K_KP_MINUS]:
             camera_z = min(12.0, camera_z + 3.0 * dt)
 
         transformed = [transform(v, angles) for v in VERTICES]
-        if projection == 'perspectiva':
-            projected = [project_perspective(v, 360, camera_z)
-                         for v in transformed]
+        if projection == "perspectiva":
+            projected = [project_perspective(v, 360, camera_z) for v in transformed]
         else:
             projected = [project_orthographic(v, 130) for v in transformed]
 
         screen.fill(BACKGROUND)
         draw_cube(screen, projected, CUBE_COLOR)
 
-        info = f'Projecao: {projection} | Camera Z: {camera_z:.1f}'
+        info = f"Projeção: {projection} | Camera Z: {camera_z:.1f}"
         screen.blit(font.render(info, True, TEXT_COLOR), (20, 18))
-        screen.blit(font.render('A/D Y | W/S X | Q/E Z | +/- camera | P troca | ESC sai',
-                                 True, TEXT_COLOR), (20, 48))
+        screen.blit(
+            font.render(
+                "A/D: Y | W/S: X | Q/E: Z | +/-: camera | P: troca | ESC: sai",
+                True,
+                TEXT_COLOR,
+            ),
+            (20, 48),
+        )
 
         pygame.display.flip()
 
     pygame.quit()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
