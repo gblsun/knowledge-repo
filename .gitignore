@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+
+# Compiled binaries / build output
+*.exe
+*.o
+*.out
+output/
+
+# Office/temp lock files
+~$*
+~WRL*.tmp
+
+# OS
+.DS_Store
+Thumbs.db
