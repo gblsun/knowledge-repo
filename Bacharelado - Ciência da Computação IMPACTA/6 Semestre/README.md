@@ -6,7 +6,7 @@ Sexto semestre do Bacharelado em Ciência da Computação (IMPACTA), com foco em
 
 - [Compiladores](./Compiladores/) — fundamentos de construção de compiladores
 - [Computação Gráfica e RA/RV](./Computação%20Gráfica%20e%20RA%20RV/) — fundamentos de computação gráfica, realidade aumentada e virtual
-- Inferência Estatística
+- [Inferência Estatística](./Inferência%20Estatística/) — revisão de estatística univariada (tendência central, dispersão, curtose)
 - Robôs Móveis Inteligentes
 - Estágio Supervisionado II
 

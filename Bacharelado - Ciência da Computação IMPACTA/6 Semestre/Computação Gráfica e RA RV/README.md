@@ -12,3 +12,5 @@ Conceitos básicos e fundamentos de processamento de imagens e de processamento 
 ## Estrutura
 
 - `Aula 3/` — pipeline gráfico e notas sobre dados e imagens
+- `Aula 4/` — modelagem de cubo e pirâmide com transformações 3D (translação, rotação, escala) e projeção em perspectiva/ortográfica, renderizado com Pygame
+- `Aula 5/` — mini ambiente virtual interativo com câmera móvel e rotação independente por objeto (cubo e pirâmide), alternando entre projeção perspectiva e ortográfica
