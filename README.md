@@ -56,7 +56,7 @@ Inclui:
 - **3º semestre:** algoritmos e estruturas de dados em Java (com apoio de bibliografia de referência) e análise e projeto de algoritmos
 - **4º semestre:** programação orientada a objetos em Java (classes, objetos, exercícios práticos)
 - **5º semestre:** análise exploratória de dados (datasets Iris e Penguins, boxplots), inteligência computacional (projeto final), paradigmas da computação (paradigma imperativo em C e paradigma funcional em Elixir) e teoria dos grafos (algoritmos de Edmonds-Karp e Floyd-Warshall)
-- **6º semestre:** compiladores, computação gráfica / realidade aumentada e virtual e inferência estatística (revisão de estatística univariada)
+- **6º semestre:** compiladores, computação gráfica / realidade aumentada e virtual e inferência estatística (revisão de estatística univariada e bivariada)
 
 ---
 
