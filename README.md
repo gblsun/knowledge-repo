@@ -60,25 +60,6 @@ Inclui:
 
 ---
 
-### Beecrowd (Resolução de Problemas)
-
-Coleção de exercícios resolvidos da plataforma Beecrowd, com foco em:
-
-- Lógica de programação
-- Estruturas de repetição e decisão
-- Manipulação de strings e números
-- Pensamento algorítmico
-
-Exemplos:
-
-area-do-círculo.py
-numero_secreto.py
-media.py
-while.py
-string_01.py
-
----
-
 ### CC50 (Harvard CS50)
 
 Exercícios e fundamentos da linguagem C desenvolvidos a partir do curso CS50, reforçando:

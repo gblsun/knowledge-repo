@@ -15,3 +15,5 @@ Revisão de estatística univariada e bivariada aplicada com **Python** (numpy, 
   - `geracao_amostra_normal.py` — geração de amostra aleatória com distribuição normal
 - `Aula 4 - Estatística bivariada - Revisão/` — associação entre variáveis categóricas:
   - `Exemplo 2 - ataque cibersegurança.py` — teste qui-quadrado de independência (`scipy.stats.chi2_contingency`) relacionando tipo de ataque cibernético (Brute Force, SQL Injection, DDoS) e sistema operacional (Linux, Windows); inclui gráfico de barras das frequências observadas e heatmap dos resíduos (observado - esperado)
+- `Aula 5 - Estimadores e estimação/` — estimação por intervalo de confiança:
+  - `aula5 - Intervalo de confiança.ipynb` — cálculo do IC de 95% para a média (distribuição *t* de Student, via `scipy.stats.t.interval`) aplicado a um conjunto de tempos de resposta de uma API (ms), incluindo alguns outliers; reporta estimador pontual (média), erro padrão, limites do IC e margem de erro, com scatter plot da amostra + faixa do IC e histograma com KDE marcando média e limites

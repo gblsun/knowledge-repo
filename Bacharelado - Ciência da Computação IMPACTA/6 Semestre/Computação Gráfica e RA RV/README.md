@@ -16,3 +16,4 @@ Conceitos básicos e fundamentos de processamento de imagens e de processamento 
 - `Aula 5/` — mini ambiente virtual interativo com câmera móvel e rotação independente por objeto (cubo e pirâmide), alternando entre projeção perspectiva e ortográfica
 - `Aula 6/` — dois cubos (pai/filho) selecionáveis por teclado, com translação, rotação e escala independentes para o objeto selecionado, e câmera móvel
 - `Aula 7/` — mini catálogo 3D com quatro objetos (cubos e pirâmides) de faces preenchidas, seleção por teclado, transformação independente do objeto selecionado e câmera móvel
+- `Aula 8/` — galeria 3D com quatro instâncias de cubo (uma girando continuamente), seleção por teclas 1-4, câmera orbital, modo sólido/arame e um objeto composto (pedestal + placa) com hierarquia pai-filho
